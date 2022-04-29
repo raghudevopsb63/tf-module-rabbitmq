@@ -27,10 +27,10 @@ resource "aws_security_group" "allow_rabbitmq" {
 resource "aws_mq_broker" "rabbitmq" {
   broker_name = "roboshop-${var.ENV}"
 
-  configuration {
-    id       = aws_mq_configuration.config-main.id
-    revision = aws_mq_configuration.config-main.latest_revision
-  }
+  //  configuration {
+  //    id       = aws_mq_configuration.config-main.id
+  //    revision = aws_mq_configuration.config-main.latest_revision
+  //  }
 
   engine_type        = "RabbitMQ"
   engine_version     = "3.9.13"
