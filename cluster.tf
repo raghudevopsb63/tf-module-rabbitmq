@@ -34,7 +34,7 @@ resource "aws_mq_broker" "rabbitmq" {
 
   engine_type        = "RabbitMQ"
   engine_version     = "3.9.13"
-  host_instance_type = "mq.t2.micro"
+  host_instance_type = "mq.t3.micro"
   security_groups    = [aws_security_group.allow_rabbitmq.id]
   subnet_ids         = [data.terraform_remote_state.vpc.outputs.PRIVATE_SUBNET_IDS[0]]
 
