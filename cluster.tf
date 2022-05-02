@@ -54,3 +54,6 @@ resource "aws_mq_broker" "rabbitmq" {
 //}
 
 
+output "rabbitmq" {
+  value = aws_mq_broker.rabbitmq
+}
