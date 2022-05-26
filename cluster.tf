@@ -68,6 +68,7 @@ resource "null_resource" "app-deploy" {
       password = jsondecode(data.aws_secretsmanager_secret_version.secrets.secret_string)["SSH_PASSWORD"]
     }
     inline = [
+      "sudo labauto ansible",
       "ansible-pull -U https://github.com/raghudevopsb63/ansible roboshop.yml  -e role_name=rabbitmq -e HOST=localhost  -e ENV=${var.ENV}"
     ]
   }
